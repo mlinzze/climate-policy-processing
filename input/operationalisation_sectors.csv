@@ -1,0 +1,34 @@
+Sector name,IPCC sectors
+Electricity and heat,Electricity and Heat Production
+General,General
+Transport,Transport
+Renewables,Electricity and Heat Production
+Buildings,Buildings
+Industry,Industry
+Agriculture and forestry,AFOLU
+Appliances,Buildings
+Light-duty vehicles,Transport
+Heating and cooling,Buildings
+Forestry,AFOLU
+Low-emissions mobility,Transport
+Heavy-duty vehicles,Transport
+Hot water and cooking,Buildings
+Construction,Buildings
+Gas,Electricity and Heat Production
+Coal,Electricity and Heat Production
+Nuclear,Electricity and Heat Production
+Shipping,Transport
+Industrial energy related,Industry
+CCS,Other
+Industrial process CO2,Industry
+Oil,Electricity and Heat Production
+Air,Other
+Waste CH4,Other
+Fluorinated gases,Other
+Rail,Transport
+Fossil fuel exploration and production,Electricity and Heat Production
+Agricultural CH4,AFOLU
+Agricultural CO2,AFOLU
+Agricultural N2O,AFOLU
+Industrial N2O,Industry
+Negative emissions,Other
