@@ -12,8 +12,8 @@ For background on the original policy data, please see the academic journal arti
 
 The repository contains two folders, [input](input) and [output](output). The folder input contains several files that can be changed by the user for their purposes.
 - The file `climatepolicies_additional.csv` contains a list of climate policies that are missing in the original dataset and are merged into the database.
-- The file `operationalisation_instruments.csv` contains three columns with instrument types. The first column contains the categories used in the original dataset. The second column contains new categories that are assigned by the script. The third column contains subcategories for some of the categories that will also be assigned by the script.-
-- The file `operationalisation_sectors.csv` contains two columns with sectors which correspond to the first two columns of the previous file, just for sectors instead of instrument types.-
+- The file `operationalisation_instruments.csv` contains three columns with instrument types. The first column contains the categories used in the original dataset. The second column contains new categories that are assigned by the script. The third column contains subcategories for some of the categories that will also be assigned by the script.
+- The file `operationalisation_sectors.csv` contains two columns with sectors which correspond to the first two columns of the previous file, just for sectors instead of instrument types.
 - The file `carbon_pricing.csv` is based on data that can be downloaded from the Carbon Pricing Dashboard of the World Bank and contains Policy IDs that match an existing policy either in the original policy data or in the file `climatepolicies_additional.csv`. The file also includes the instrument type (i.e. carbon tax or ETS). The script currently only matches carbon pricing policies among the G20 economies and a few selected large emitters for which the policy data is relatively complete.
 
 # Usage

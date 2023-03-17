@@ -15,17 +15,6 @@ df = pd.read_csv('./input/climate_policy_database_policies_export.csv')
 df = df.loc[~df.duplicated(subset=['Policy ID', 'Country ISO', 'Policy name'], keep='first'), :]
 
 ## ============================================================
-## select only certain policies
-## jurisdiction: national (includes now also EU policies, see above)
-## policy objectives: include mitigation
-## ============================================================
-
-df['national_policy'] = (df['Jurisdiction'] == 'Country')
-df['mitigation'] = df['Policy objective'].str.contains('Mitigation')
-
-df = df.loc[df['national_policy'] & df['mitigation'], :]
-
-## ============================================================
 ## add missing policies
 ## these are carbon pricing policies not included in the climate policy database
 ## ============================================================
@@ -180,6 +169,17 @@ for policy in df.loc[df['Country ISO'] == 'EUE', 'Policy ID'].unique():
 		df = pd.concat([df, new_entry], axis=0, ignore_index=True)
 
 df = df.loc[df['Country ISO'] != 'EUE', :]
+
+## ============================================================
+## select only certain policies
+## jurisdiction: national (includes now also EU policies, see above)
+## policy objectives: include mitigation
+## ============================================================
+
+df['national_policy'] = (df['Jurisdiction'] == 'Country')
+df['mitigation'] = df['Policy objective'].str.contains('Mitigation')
+
+df = df.loc[df['national_policy'] & df['mitigation'], :]
 
 ## ============================================================
 ## write out the file with rows corresponding to individual policies
