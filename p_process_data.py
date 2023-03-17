@@ -104,16 +104,6 @@ for sector in sector_values:
 df = df.drop(columns=['sectors_list'])
 
 ## ============================================================
-## select only countries with plausibly complete policy coverage
-## G20 and selected other large emitters
-## ============================================================
-
-g20 =['ARG', 'AUS', 'BRA', 'CAN', 'CHN', 'DEU', 'EUE', 'FRA', 'GBR', 'IDN', 'IND', 'ITA', 'JPN', 'KOR', 'MEX', 'RUS', 'SAU', 'TUR', 'USA', 'ZAF']
-large_emitters = ['CHL', 'COL', 'CHE', 'UKR', 'ESP', 'EGY', 'IRN', 'IRQ', 'KAZ', 'KWT', 'MYS', 'NIG', 'PAK', 'THA', 'ARE', 'UZB', 'VEN', 'VNM']
-
-df = df.loc[df['Country ISO'].isin(g20 + large_emitters), :]
-
-## ============================================================
 ## add EUE policies to member states
 ## set year of adoption/implementation as min(year adoption/implementation, year of joining EU)
 ## after that, drop EUE as a jurisdiction/country
@@ -169,6 +159,16 @@ for policy in df.loc[df['Country ISO'] == 'EUE', 'Policy ID'].unique():
 		df = pd.concat([df, new_entry], axis=0, ignore_index=True)
 
 df = df.loc[df['Country ISO'] != 'EUE', :]
+
+## ============================================================
+## select only countries with plausibly complete policy coverage
+## G20 and selected other large emitters
+## ============================================================
+
+g20 =['ARG', 'AUS', 'BRA', 'CAN', 'CHN', 'DEU', 'EUE', 'FRA', 'GBR', 'IDN', 'IND', 'ITA', 'JPN', 'KOR', 'MEX', 'RUS', 'SAU', 'TUR', 'USA', 'ZAF']
+large_emitters = ['CHL', 'COL', 'CHE', 'UKR', 'ESP', 'EGY', 'IRN', 'IRQ', 'KAZ', 'KWT', 'MYS', 'NIG', 'PAK', 'THA', 'ARE', 'UZB', 'VEN', 'VNM']
+
+df = df.loc[df['Country ISO'].isin(g20 + large_emitters), :]
 
 ## ============================================================
 ## select only certain policies

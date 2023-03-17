@@ -22,7 +22,7 @@ The code requires the user to download the original data from the Climate Policy
 
 Note that for the correct identification of carbon pricing policies, the two files `climatepolicies_additional.csv` and `carbon_pricing.csv` might need to be updated. For example, the script currently only matches carbon pricing policies among the G20 economies and a few selected large emitters for which the policy data is relatively complete. This can be updated by matching the carbon pricing policies in the file `carbon_pricing.csv` with existing policies in the original policy data or in the file `climatepolicies_additional.csv` using the Policy ID columns.
 
-Also note that the script currently first filters the original data and keeps only policies at the supranational (EU) or national level and only policies that include mitigation as an objective.
+Also note that the script currently first filters the original data and keeps only policies at the supranational (EU) or national level, only policies that include mitigation as an objective, and only countries for which the data is considered relatively complete (G20 plus other major emitters).
 
 # Requirements
 
