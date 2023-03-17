@@ -4,6 +4,8 @@ This repository contains Python code that can be used to process data on climate
 
 The code assigns every policy in the original dataset one or several of certain instrument types and sectors. The instrument types follow the IEA classification. The sectors correspond to the sectors used in IPCC reports. The script also applies policies of the European Union to individual member countries. Furthermore, it identifies policies that are categorised as carbon pricing policies (carbon taxes and ETS) by the World Bank as provided with the [Carbon Pricing Dashboard](https://carbonpricingdashboard.worldbank.org/). The code also transforms the data into different formats that can be used more easily for statistical analysis.
 
+Note that the code currently also filters the data, keeping only policies with mitigation as an objective, for national jurisdiction (plus EU policies), and for countries for which the policy data is considered to be relatively complete (G20 plus other selected major emitters). This can be changed by commenting out the corresponding lines of code.
+
 The code was originally produced for the academic journal article [Policy sequencing towards carbon pricing among the world's largest emitters](https://www.nature.com/articles/s41558-022-01538-8) by Manuel Linsenmeier, Adil Mohommad, and Gregor Schwerhoff, which was published in the journal Nature Climate Change in 2022. Please cite this article when you use this code as a reference.
 
 For background on the original policy data, please see the academic journal article [Twenty years of climate policy: G20 coverage and gaps](https://doi.org/10.1080/14693062.2021.1993776) by Leonardo Nascimento, Takeshi Kuramochi, Gabriela Iacobuta, Michel den Elzen, Hanna Fekete, Marie Weishaupt, Heleen Laura van Soest, Mark Roelfsema, Gustavo De Vivero-Serrano, Swithin Lui, Frederic Hans, Maria Jose de Villafranca Casas, and Niklas Höhne.
@@ -22,7 +24,7 @@ The code requires the user to download the original data from the Climate Policy
 
 Note that for the correct identification of carbon pricing policies, the two files `climatepolicies_additional.csv` and `carbon_pricing.csv` might need to be updated. For example, the script currently only matches carbon pricing policies among the G20 economies and a few selected large emitters for which the policy data is relatively complete. This can be updated by matching the carbon pricing policies in the file `carbon_pricing.csv` with existing policies in the original policy data or in the file `climatepolicies_additional.csv` using the Policy ID columns.
 
-Also note that the script currently first filters the original data and keeps only policies at the supranational (EU) or national level, only policies that include mitigation as an objective, and only countries for which the data is considered relatively complete (G20 plus other major emitters).
+Also note that the script currently first filters the original data and keeps only policies at the supranational (EU) or national level, only policies that include mitigation as an objective, and only countries for which the data is considered relatively complete (G20 plus other selected major emitters).
 
 # Requirements
 
